@@ -33,12 +33,6 @@ $('.save').click(function(){
   })
 })
 
-
-
- 
-// functions 
-
-
  
 function addToSideBar(task) {
   var li = $('<li>'+task.get('task')+'</li>')

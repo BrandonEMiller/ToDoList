@@ -3,19 +3,20 @@
 (function () {
   describe('The To Do List', function(){
     this.timeout(15000);
+    var result;
+ 
+    // fill out the form
+    var form = $('.form')
+    // make a random title with which we can query
+    var randomTask = 'A Test Task #'+ Math.floor(Math.random()*10000000)
+    form.find('#task').val(randomTask)
+    form.find('#content').val('This is a really great post! I loved writing it!')
+ 
+    // submit it
+    $('.save').click()
  
     it('should save a new task and that task should be returned from Parse', function(done){
-      var result;
- 
-      // fill out the form
-      var form = $('.form')
-      // make a random title with which we can query
-      var randomTask = 'A Test Task #'+ Math.floor(Math.random()*10000000)
-      form.find('#task').val(randomTask)
-      form.find('#content').val('This is a really great post! I loved writing it!')
- 
-      // submit it
-      $('.save').click()
+      
  
       setTimeout((function(){
  
@@ -34,7 +35,15 @@
         });
  
       }), 2000)
-    }); // end it()
+    });
+
+    it("should post the new task to the sidebar for display purposes", function(){
+    	var lastSideItem = $('.taskList li').last().text()
+    	expect(lastSideItem).to.equal(randomTask)
+    })
+
+    
  
   })
 })();
+
