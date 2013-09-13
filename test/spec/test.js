@@ -42,7 +42,25 @@
     	expect(lastSideItem).to.equal(randomTask)
     })
 
-    
+    // it("should place a clicked item from the sidebar into the form fields", function(done){
+    	
+    // 	var lastItem=$('.taskList li').last()
+
+   		
+   	// 	setTimeout((function(){
+   	// 		lastItem.click()
+   	// 		success: function() {
+   	// 			var fieldTask = $('#task').text()
+   	// 			expect(lastItem.text()).to.equal(fieldTask)
+   	// 			done()
+    // 		}
+
+    // 		error: function(error) {
+    // 			done(error.description)
+    // 		}
+
+    // 	}), 2000)
+    // })
  
   })
 })();
