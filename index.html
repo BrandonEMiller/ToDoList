@@ -1,0 +1,93 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ToDoApp</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/c985fa06.main.css">
+
+        <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="container">
+            <div class="header">
+                
+                <h3 class="text-muted">What To Do?</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 tasks">
+                    
+                    <h3 class="text-center">Tasks</h3>
+                     <ul class="taskList"></ul>
+
+                </div>
+                <div class="col-md-8 preview">
+                    <h3 class="text-center">Preview</h3>
+                    <!-- Post form -->
+            <form class="form-horizontal form" role="form">
+                      <!-- title -->
+                <div class="form-group">
+                    <label for="title" class="col-lg-2 control-label">Title</label>
+                        <div class="col-lg-10">
+                          <input type="email" class="form-control" id="task" placeholder="Post Task">
+                        </div>
+                </div>
+ 
+                      <!-- content  -->
+                <div class="form-group">
+                    <label for="content" class="col-lg-2 control-label">Content</label>
+                        <div class="col-lg-10">
+                          <textarea id="content" class="form-control" placeholder="Description of your task goes here"></textarea>
+                        </div>
+                </div>
+            </form>
+             
+                
+               <button type="button" class="btn btn-primary save">Save New</button>
+               <button type="button" class="btn btn-warning update">Update Current</button>
+                <button type="button" class="btn btn-danger delete">Delete</button>
+
+                </div>
+                </div>
+            
+  
+
+
+            <div class="footer">
+                <p>♥ from the Yeoman team</p>
+            </div>
+
+        </div>
+
+
+        <script src="scripts/1137e1f5.vendor.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <script src="scripts/ba8a8e2d.main.js"></script>
+
+        <script src="scripts/d5d180ab.coffee.js"></script>
+
+        <script src="scripts/491c175a.plugins.js"></script>
+</body>
+</html>
