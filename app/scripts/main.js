@@ -6,7 +6,7 @@ var TaskCollectionClass = Parse.Collection.extend({
   model: TaskClass
 });
  
-// create an instance of the collection
+
 var task = new TaskCollectionClass()
  
 task.fetch({

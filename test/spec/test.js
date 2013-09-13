@@ -5,14 +5,14 @@
     this.timeout(15000);
     var result;
  
-    // fill out the form
+
     var form = $('.form')
-    // make a random title with which we can query
+    
     var randomTask = 'A Test Task #'+ Math.floor(Math.random()*10000000)
     form.find('#task').val(randomTask)
-    form.find('#content').val('This is a really great post! I loved writing it!')
+    form.find('#content').val('This is a task')
  
-    // submit it
+
     $('.save').click()
  
     it('should save a new task and that task should be returned from Parse', function(done){
