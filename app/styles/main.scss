@@ -99,10 +99,19 @@ body {
     min-height: 200px;
     background: rgba(110, 110, 116, 0.55);
     color: white;
+    font-family: Times;
 }
 
 .preview {
     padding: 10px;
     min-height: 200px;
     background: rgba(255, 255, 0, 0.53);
+}
+
+h3 {
+    font-family: Times;
+}
+
+h1 {
+    font-family: Futura;
 }

@@ -6,7 +6,6 @@ var TaskCollectionClass = Parse.Collection.extend({
   model: TaskClass
 });
  
-
 var task = new TaskCollectionClass()
  
 task.fetch({
@@ -48,6 +47,16 @@ function renderTask(task) {
   $('.delete').click(function(){
   		task.destroy({
   			success: function(task){
+
+  				$('.taskList').html("")
+   			 	collect = new TaskCollectionClass()
+   				collect.fetch({
+   					success: function(collection) {
+     					collection.each(function(collect){
+      		 			addToSideBar(collect)
+     					})
+   					}
+	 			})
   				 
   			},
   			error: function(task, error){
@@ -66,29 +75,37 @@ function renderTask(task) {
    			task.set("task", taskTitle);
     		task.set("content", taskContent);
     		task.save();
-    		
-  		}
+    		$('.taskList').html("")
+   			 collect = new TaskCollectionClass()
+   				collect.fetch({
+   					success: function(collection) {
+     					collection.each(function(collect){
+      		 			addToSideBar(collect)
+     					})
+   					}
+	 			})
+   		}
 	});
   })
 }
 
-$(document).ready(function () {
-    //Increment the idle time counter every minute.
-    var idleInterval = setInterval("timerIncrement()", 1000); // 1 minute
+// $(document).ready(function () {
+//     //Increment the idle time counter every minute.
+//     var idleInterval = setInterval("timerIncrement()", 1000); // 1 minute
 
-    //Zero the idle timer on mouse movement.
-    $(this).mousemove(function (e) {
-        idleTime = 0;
-    });
-    $(this).keypress(function (e) {
-        idleTime = 0;
-    });
-})
-function timerIncrement() {
-	var idleTime
-    idleTime = idleTime + 1;
-    if (idleTime > 3) { // 3 seconds
-        window.location.reload();
-    }
-}
+//     //Zero the idle timer on mouse movement.
+//     $(this).mousemove(function (e) {
+//         idleTime = 0;
+//     });
+//     $(this).keypress(function (e) {
+//         idleTime = 0;
+//     });
+// })
+// function timerIncrement() {
+// 	var idleTime
+//     idleTime = idleTime + 1;
+//     if (idleTime > 3) { // 3 seconds
+//         window.location.reload();
+//     }
+// }
 
