@@ -7,6 +7,7 @@ var TaskCollectionClass = Parse.Collection.extend({
 });
  
 var task = new TaskCollectionClass()
+
  
 task.fetch({
   success: function(collection) {
@@ -21,6 +22,7 @@ $('.save').click(function(){
   var task = new TaskClass();
   task.set('task', $('#task').val());
   task.set('content', $('#content').val());
+  task.set('complete', false)
  
   task.save(null, {
     success: function(result){
@@ -35,7 +37,14 @@ $('.save').click(function(){
  
 function addToSideBar(task) {
   var li = $('<li>'+task.get('task')+'</li>')
-  $('.taskList').append(li)
+  if (task.get('complete') == true ) {
+  	li.css('color','green')
+  	$('.taskList').append(li)
+  }	
+  else {
+  	li.css('color', 'white')
+  	$('.taskList').append(li)
+  }
   li.click(function(){
     renderTask(task)
   })
@@ -87,25 +96,23 @@ function renderTask(task) {
    		}
 	});
   })
+  $('.complete').click(function(){
+  	
+  	task.save(null, {
+  		success: function(task) {
+    
+   			task.set("complete", true);
+    		task.save();
+    		$('.taskList').html("")
+   			 collect = new TaskCollectionClass()
+   				collect.fetch({
+   					success: function(collection) {
+     					collection.each(function(collect){
+      		 			addToSideBar(collect)
+     					})
+   					}
+	 			})
+   		}
+	});
+  })
 }
-
-// $(document).ready(function () {
-//     //Increment the idle time counter every minute.
-//     var idleInterval = setInterval("timerIncrement()", 1000); // 1 minute
-
-//     //Zero the idle timer on mouse movement.
-//     $(this).mousemove(function (e) {
-//         idleTime = 0;
-//     });
-//     $(this).keypress(function (e) {
-//         idleTime = 0;
-//     });
-// })
-// function timerIncrement() {
-// 	var idleTime
-//     idleTime = idleTime + 1;
-//     if (idleTime > 3) { // 3 seconds
-//         window.location.reload();
-//     }
-// }
-

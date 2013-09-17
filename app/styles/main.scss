@@ -96,7 +96,7 @@ body {
 
 .tasks {
     padding: 10px;
-    min-height: 200px;
+    min-height: 225px;
     background: rgba(110, 110, 116, 0.55);
     color: white;
     font-family: Times;
@@ -110,8 +110,14 @@ body {
 
 h3 {
     font-family: Times;
+    text-shadow: 0 1px 1px black;
 }
 
 h1 {
     font-family: Futura;
+}
+
+.taskList {
+    text-shadow: 0 1px 1px black ;
+    font-size: 18px;
 }
